@@ -272,9 +272,6 @@ export default function Up360Landing() {
             <a href="#services" className="u360-link u360-navlink" style={navLink}>תחומי התמחות</a>
             <a href="#about" className="u360-link u360-navlink" style={navLink}>אודות</a>
             <a href="#contact" className="u360-link u360-navlink" style={navLink}>צור קשר</a>
-            <a href="#lead" className="u360-cta u360-header-cta" style={{ ...btn(GRAD, '#fff'), padding: '10px 20px', fontSize: 15 }}>
-              בדיקת תיק — חינם
-            </a>
           </nav>
         </div>
       </header>
