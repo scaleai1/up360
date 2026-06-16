@@ -514,29 +514,6 @@ export default function Up360Landing() {
         </div>
       </Section>
 
-      {/* ── Footer ─────────────────────────────────────────────────────────── */}
-      <footer style={{ background: C.navyDeep, borderTop: `1px solid ${C.line}`, padding: '34px 20px' }}>
-        <div
-          style={{
-            maxWidth: 1080,
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: 16,
-          }}
-        >
-          <Logo size={34} />
-          <div style={{ fontSize: 14, color: C.body }}>
-            סוכן ביטוח ויועץ פנסיוני · “תמיד כן”
-          </div>
-          <div style={{ fontSize: 13, color: C.muted }}>
-            © {2026} Up360. כל הזכויות שמורות.
-          </div>
-        </div>
-      </footer>
-
       {/* Floating WhatsApp */}
       <a
         href={WHATSAPP}
