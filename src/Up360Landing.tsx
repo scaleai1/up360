@@ -153,7 +153,7 @@ function Section({
   id?: string;
 }) {
   return (
-    <section id={id} style={{ background: bg, padding: '72px 20px' }}>
+    <section id={id} className="u360-section" style={{ background: bg, padding: '72px 20px' }}>
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>{children}</div>
     </section>
   );
@@ -177,7 +177,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 900, color: C.heading, lineHeight: 1.2 }}>
+    <h2 className="u360-h2" style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 900, color: C.heading, lineHeight: 1.2 }}>
       {children}
     </h2>
   );
@@ -237,6 +237,22 @@ export default function Up360Landing() {
         .u360-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,.45); border-color: ${C.teal} !important }
         a:hover.u360-cta { transform: translateY(-2px) }
         .u360-link:hover { color: ${C.teal} }
+
+        /* ── Mobile ─────────────────────────────────────────────── */
+        @media (max-width: 768px) {
+          .u360-navlink { display: none !important; }
+          .u360-header-inner { padding: 9px 14px !important; }
+          .u360-header-logo img { height: 38px !important; }
+          .u360-header-cta { padding: 9px 15px !important; font-size: 13.5px !important; }
+          .u360-section { padding: 44px 16px !important; }
+          .u360-hero { padding: 40px 16px 52px !important; }
+          .u360-hero h1 { font-size: 32px !important; }
+          .u360-hero p { font-size: 16px !important; }
+          .u360-h2 { font-size: 24px !important; }
+          .u360-panel { padding: 26px 20px !important; }
+          .u360-stat { font-size: 25px !important; }
+          .u360-badge { font-size: 11.5px !important; padding: 6px 12px !important; line-height: 1.45 !important; }
+        }
       `}</style>
 
       {/* ── Header ─────────────────────────────────────────────────────────── */}
@@ -252,6 +268,7 @@ export default function Up360Landing() {
         }}
       >
         <div
+          className="u360-header-inner"
           style={{
             maxWidth: 1080,
             margin: '0 auto',
@@ -261,12 +278,12 @@ export default function Up360Landing() {
             justifyContent: 'space-between',
           }}
         >
-          <Logo size={52} />
+          <span className="u360-header-logo"><Logo size={52} /></span>
           <nav style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
-            <a href="#services" className="u360-link" style={navLink}>תחומי התמחות</a>
-            <a href="#about" className="u360-link" style={navLink}>אודות</a>
-            <a href="#contact" className="u360-link" style={navLink}>צור קשר</a>
-            <a href="#lead" className="u360-cta" style={{ ...btn(GRAD, '#fff'), padding: '10px 20px', fontSize: 15 }}>
+            <a href="#services" className="u360-link u360-navlink" style={navLink}>תחומי התמחות</a>
+            <a href="#about" className="u360-link u360-navlink" style={navLink}>אודות</a>
+            <a href="#contact" className="u360-link u360-navlink" style={navLink}>צור קשר</a>
+            <a href="#lead" className="u360-cta u360-header-cta" style={{ ...btn(GRAD, '#fff'), padding: '10px 20px', fontSize: 15 }}>
               בדיקת תיק — חינם
             </a>
           </nav>
@@ -274,7 +291,7 @@ export default function Up360Landing() {
       </header>
 
       {/* ── Hero ───────────────────────────────────────────────────────────── */}
-      <section style={{ position: 'relative', padding: '80px 20px 90px' }}>
+      <section className="u360-hero" style={{ position: 'relative', padding: '80px 20px 90px' }}>
         <div
           aria-hidden
           style={{
@@ -289,6 +306,7 @@ export default function Up360Landing() {
         <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
           <div className="u360-rise" style={{ maxWidth: 720 }}>
             <div
+              className="u360-badge"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -301,6 +319,7 @@ export default function Up360Landing() {
                 fontWeight: 700,
                 color: C.heading,
                 marginBottom: 22,
+                maxWidth: '100%',
               }}
             >
               20 שנות ניסיון · רישיון סוכן ביטוח ויועץ פנסיוני
@@ -329,7 +348,7 @@ export default function Up360Landing() {
                 ['360°', 'כיסוי מלא'],
               ].map(([n, l]) => (
                 <div key={l}>
-                  <div style={{ fontSize: 30, fontWeight: 900, color: C.teal }}>{n}</div>
+                  <div className="u360-stat" style={{ fontSize: 30, fontWeight: 900, color: C.teal }}>{n}</div>
                   <div style={{ fontSize: 14, color: C.muted }}>{l}</div>
                 </div>
               ))}
@@ -449,6 +468,7 @@ export default function Up360Landing() {
       {/* ── Lead-gen ───────────────────────────────────────────────────────── */}
       <Section id="lead">
         <div
+          className="u360-panel"
           style={{
             background: GRAD,
             borderRadius: 28,
@@ -498,6 +518,7 @@ export default function Up360Landing() {
       {/* ── Contact ────────────────────────────────────────────────────────── */}
       <Section id="contact">
         <div
+          className="u360-panel"
           style={{
             background: C.navyDeep,
             border: `1px solid ${C.line}`,
