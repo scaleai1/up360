@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import up360Logo from './up360-logo.jpg';
 
 /**
  * Up360Landing — public marketing site for the Up360 insurance & finance agency.
@@ -52,7 +53,7 @@ function Logo({ size = 40 }: { size?: number }) {
         }}
       >
         <img
-          src="/up360-logo.png"
+          src={up360Logo}
           alt="Up360 — ביטוח ופיננסים"
           onError={() => setImgOk(false)}
           style={{ height: size, width: 'auto', display: 'block' }}
