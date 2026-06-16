@@ -30,7 +30,6 @@ const GRAD = `linear-gradient(135deg, ${C.blue} 0%, ${C.teal} 48%, ${C.green} 10
 const GRAD_TG = `linear-gradient(135deg, ${C.teal}, ${C.green})`;
 const PHONE = '054-6588651';
 const PHONE_TEL = '+972546588651';
-const EMAIL = 'Info@ra-ins.co.il';
 const WHATSAPP = `https://wa.me/972546588651?text=${encodeURIComponent(
   'שלום, הגעתי דרך האתר ואשמח לבדיקת תיק ביטוח ללא עלות',
 )}`;
@@ -515,48 +514,6 @@ export default function Up360Landing() {
         </div>
       </Section>
 
-      {/* ── Contact ────────────────────────────────────────────────────────── */}
-      <Section id="contact">
-        <div
-          className="u360-panel"
-          style={{
-            background: C.navyDeep,
-            border: `1px solid ${C.line}`,
-            borderRadius: 28,
-            padding: 'clamp(34px, 5vw, 60px)',
-            color: '#fff',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: 40,
-            alignItems: 'center',
-          }}
-        >
-          <div>
-            <Eyebrow>צור קשר</Eyebrow>
-            <h2 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, lineHeight: 1.2, color: C.heading }}>
-              כשצריך אותנו, אנחנו תמיד כאן
-            </h2>
-            <p style={{ color: C.body, fontSize: 18, marginTop: 14, lineHeight: 1.6 }}>
-              שלח הודעה, התקשר, או בקש בדיקת תיק — אחזור אליך אישית.
-            </p>
-          </div>
-          <div style={{ display: 'grid', gap: 14 }}>
-            <a href={`tel:${PHONE_TEL}`} style={contactRow}>
-              <span style={contactIcon}>📞</span>
-              <span><div style={contactLabel}>טלפון</div><div style={contactValue}>{PHONE}</div></span>
-            </a>
-            <a href={`mailto:${EMAIL}`} style={contactRow}>
-              <span style={contactIcon}>📧</span>
-              <span><div style={contactLabel}>אימייל</div><div style={contactValue}>{EMAIL}</div></span>
-            </a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={contactRow}>
-              <span style={contactIcon}>💬</span>
-              <span><div style={contactLabel}>וואטסאפ</div><div style={contactValue}>שליחת הודעה מהירה</div></span>
-            </a>
-          </div>
-        </div>
-      </Section>
-
       {/* ── Footer ─────────────────────────────────────────────────────────── */}
       <footer style={{ background: C.navyDeep, borderTop: `1px solid ${C.line}`, padding: '34px 20px' }}>
         <div
@@ -617,27 +574,3 @@ const navLink: React.CSSProperties = {
   fontSize: 15,
   transition: 'color .15s ease',
 };
-const contactRow: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: 14,
-  background: 'rgba(255,255,255,0.05)',
-  border: '1px solid rgba(255,255,255,0.12)',
-  borderRadius: 14,
-  padding: '14px 18px',
-  textDecoration: 'none',
-  color: '#fff',
-};
-const contactIcon: React.CSSProperties = {
-  width: 42,
-  height: 42,
-  borderRadius: 12,
-  background: 'rgba(255,255,255,0.08)',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: 20,
-  flexShrink: 0,
-};
-const contactLabel: React.CSSProperties = { fontSize: 13, color: 'rgba(255,255,255,0.55)' };
-const contactValue: React.CSSProperties = { fontSize: 17, fontWeight: 700, color: '#fff' };
