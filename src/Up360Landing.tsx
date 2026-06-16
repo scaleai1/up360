@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import up360Logo from './up360-logo.jpg';
+import up360Logo from './up360-logo-white.png';
 
 /**
  * Up360Landing — public marketing site for the Up360 insurance & finance agency.
@@ -36,29 +36,18 @@ const WHATSAPP = `https://wa.me/972546588651?text=${encodeURIComponent(
 )}`;
 
 // ── Small presentational helpers ──────────────────────────────────────────────
-// Real logo image sits on a clean white chip so it stays legible on the dark theme.
-// Falls back to the SVG wordmark until /up360-logo.png is added to public/.
+// White knockout of the real logo — transparent background, reads cleanly on the
+// dark theme. Falls back to the SVG wordmark if the image fails to load.
 function Logo({ size = 40 }: { size?: number }) {
   const [imgOk, setImgOk] = useState(true);
   if (imgOk) {
     return (
-      <span
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          background: '#fff',
-          borderRadius: 12,
-          padding: '7px 13px',
-          boxShadow: '0 6px 18px rgba(0,0,0,0.20)',
-        }}
-      >
-        <img
-          src={up360Logo}
-          alt="Up360 — ביטוח ופיננסים"
-          onError={() => setImgOk(false)}
-          style={{ height: size, width: 'auto', display: 'block' }}
-        />
-      </span>
+      <img
+        src={up360Logo}
+        alt="Up360 — ביטוח ופיננסים"
+        onError={() => setImgOk(false)}
+        style={{ height: size, width: 'auto', display: 'block' }}
+      />
     );
   }
   return <LogoWordmark size={size} />;
@@ -242,7 +231,7 @@ export default function Up360Landing() {
         @media (max-width: 768px) {
           .u360-navlink { display: none !important; }
           .u360-header-inner { padding: 9px 14px !important; }
-          .u360-header-logo img { height: 38px !important; }
+          .u360-header-logo img { height: 50px !important; }
           .u360-header-cta { padding: 9px 15px !important; font-size: 13.5px !important; }
           .u360-section { padding: 44px 16px !important; }
           .u360-hero { padding: 40px 16px 52px !important; }
@@ -278,7 +267,7 @@ export default function Up360Landing() {
             justifyContent: 'space-between',
           }}
         >
-          <span className="u360-header-logo"><Logo size={52} /></span>
+          <span className="u360-header-logo"><Logo size={68} /></span>
           <nav style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
             <a href="#services" className="u360-link u360-navlink" style={navLink}>תחומי התמחות</a>
             <a href="#about" className="u360-link u360-navlink" style={navLink}>אודות</a>
