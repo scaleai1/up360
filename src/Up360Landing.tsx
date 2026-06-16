@@ -210,12 +210,6 @@ const VALUES = [
   { t: 'זמינות מלאה', d: 'כשפונים אליי — מקבלים תשובה, מקבלים שירות, ומקבלים מישהו שנלחם לצידך.' },
 ];
 
-const SLOGANS = [
-  'תמיד כן — כי זה מה שמגיע לך',
-  '360° הגנה. 100% שקט נפשי.',
-  '20 שנה לצידך — בטוב ובמשבר',
-];
-
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function Up360Landing() {
   const [scrolled, setScrolled] = useState(false);
@@ -267,7 +261,7 @@ export default function Up360Landing() {
             justifyContent: 'space-between',
           }}
         >
-          <Logo />
+          <Logo size={52} />
           <nav style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
             <a href="#services" className="u360-link" style={navLink}>תחומי התמחות</a>
             <a href="#about" className="u360-link" style={navLink}>אודות</a>
@@ -498,34 +492,6 @@ export default function Up360Landing() {
               </a>
             </div>
           </div>
-        </div>
-      </Section>
-
-      {/* ── Slogans ────────────────────────────────────────────────────────── */}
-      <Section bg={SURFACE}>
-        <div style={{ textAlign: 'center', marginBottom: 36 }}>
-          <Eyebrow>למה Up360</Eyebrow>
-          <H2>תמיד למעלה, תמיד בשבילך</H2>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
-          {SLOGANS.map((s) => (
-            <div
-              key={s}
-              style={{
-                border: `1px solid ${C.line}`,
-                borderRadius: 18,
-                padding: '28px 24px',
-                fontSize: 20,
-                fontWeight: 800,
-                color: C.heading,
-                textAlign: 'center',
-                background: C.card,
-              }}
-            >
-              <span style={{ fontSize: 26, color: C.green }}>“</span>
-              <div style={{ marginTop: 6 }}>{s}</div>
-            </div>
-          ))}
         </div>
       </Section>
 
